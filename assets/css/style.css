@@ -1,0 +1,482 @@
+/* global */
+:root {
+  --blue: #2ca7dc;
+  --green: #305034;
+  --lightgreen: #cbcab6;
+  --crimson: #dc143c;
+  --pink: #f67e7d;
+  --white: #fff;
+  --light: hsla(0, 0%, 100%, 0.8);
+  --dark: #000;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Dosis";
+}
+.container {
+  width: 80%;
+}
+a {
+  cursor: pointer;
+}
+/* header */
+.header {
+  height: 90px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  /* box-shadow: 0 3px 6px 0 rgb(0 0 0 / 10%); */
+  background-image: linear-gradient(to bottom, var(--dark), hsla(0, 0%, 0%, 0));
+}
+.header .navbar {
+  padding: 15px 0;
+}
+.header .navbar-brand {
+  color: var(--lightgreen);
+  font-size: 34px;
+  font-weight: 700;
+  margin: 0;
+}
+.header .navbar-nav a.nav-link {
+  font-size: 20px;
+  font-weight: 400;
+  padding: 15px 0;
+  margin-left: 10px;
+  color: var(--white);
+  position: relative;
+}
+
+.header .navbar-nav a:hover {
+  color: var(--lightgreen);
+}
+.header .navbar-nav a::before {
+  position: absolute;
+  bottom: 13px;
+  left: 0;
+  content: "";
+  background: var(--green);
+  width: 0;
+  height: 1.5px;
+  transition: all 0.5s ease 0s;
+}
+.header .navbar-nav a:hover.nav-link::before {
+  width: 100%;
+}
+.header .nav-item {
+  padding: 0 12px;
+}
+/* alider */
+.slider {
+  position: relative;
+}
+.slider img {
+  height: 900px;
+  width: 100%;
+  object-fit: cover;
+}
+/* .slider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+} */
+.slider .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+.slider .content_info {
+  /* background-image: linear-gradient(
+    to right,
+    hsla(198, 72%, 52%, 0.8),
+    hsla(146, 100%, 66%, 0.8)
+  ); */
+  background-color: hsla(0, 0%, 0%, 0.4);
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  text-align: center;
+  font-weight: 700;
+}
+.slider .content p {
+  font-size: 40px;
+  font-family: "Mulish";
+  font-weight: 700;
+}
+.slider .content h2 {
+  font-size: 80px;
+  font-family: "Dancing Script", cursive;
+}
+.slider .content h2::after {
+  margin: auto;
+  content: "";
+  width: 300px;
+  height: 2px;
+  background-color: var(--white);
+  display: block;
+  margin-top: 20px;
+}
+.slider .content h2 i {
+  color: var(--crimson);
+}
+.slider .content_info img {
+  width: 100px;
+  height: 100px;
+}
+.down-btn {
+  margin: auto;
+  text-align: center;
+}
+.fa-angle-down {
+  position: absolute;
+  top: 650px;
+  left: 790px;
+  font-size: 50px;
+  color: var(--white);
+  animation: slideDown 1s linear infinite;
+  /* animation-name: slideDown; */
+  /* thời gian chuyển động */
+  /* animation-duration: 1s; */
+  /* chuyển động đều */
+  /* animation-timing-function: linear; */
+  /* chọn vòng lặp, vô tận */
+  /* animation-iteration-count: infinite; */
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 1;
+    /* translateY: di chuyển theo chiều dọc */
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+/* info */
+.info {
+  position: relative;
+  background-image: url(../img/background.jpg);
+  background-size: 100%;
+  height: 700px;
+}
+.info-top {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info .info-top h1 {
+  color: var(--green);
+  font-size: 50px;
+  font-weight: 400;
+}
+.info .info-top h2 {
+  color: var(--green);
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+.info .info-top p {
+  padding: 0 10px;
+  font-size: 20px;
+}
+.info .info-top img {
+  width: 400px;
+  padding: 20px;
+  background-color: var(--white);
+  transition: all 1s linear;
+}
+.info .info-left,
+.info .info-right {
+  overflow: hidden;
+}
+.info .info-left:hover img,
+.info .info-right:hover img {
+  transform: scale(1.5);
+}
+
+.info .info-left,
+.info .info-right {
+  position: relative;
+}
+.info .info-left .groom,
+.info .info-right .bride {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  text-align: center;
+  padding: 50px 15px;
+  opacity: 0;
+  transition: all 1s linear;
+}
+.info .info-left:hover .groom,
+.info .info-right:hover .bride {
+  opacity: 1;
+}
+/* .info .bride::before, .info .groom::before {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 3;
+  content: "";
+  width: 50%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(to right, hsla(52, 31%, 81%, 0.4) 0, hsla(52, 31%, 81%, 0) 100%);
+  transform: skewX(-25deg);
+  visibility: hidden;
+}
+.info .bride:hover:before, .info .groom:hover:before{
+  animation: shine 1s linear;
+}
+
+@keyframes shine {
+  0%{
+      opacity: 1;
+      transform: scaleX(-25deg);
+      visibility: visible;
+  }
+  100%{
+      left: 150%;
+      transform: translateX(190px);
+      transform: scaleX(-100deg);
+      visibility: hidden;
+  }
+} */
+
+.info-content {
+  text-align: center;
+}
+.info-content p {
+  padding: 0 50px;
+  padding-top: 350px;
+  font-size: 25px;
+  margin: 0;
+}
+.info-content img {
+  width: 200px;
+  opacity: 0.8;
+}
+.info-content h3 {
+  font-family: "Dancing Script";
+  font-size: 40px;
+  color: var(--green);
+}
+/* album */
+.album {
+  background-image: url(../img/bg17.png);
+  object-fit: cover;
+  background-position: top center;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.album .container {
+  max-width: 1199px;
+  margin: auto;
+}
+
+.album .title{
+  margin-bottom: 50px;
+}
+.album .heading-section {
+  position: relative;
+}
+.album .heading-section .clone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 100px;
+  color: rgba(0, 0, 0, 0.05);
+  line-height: 1;
+  font-weight: 700;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.album .heading-section h2 {
+  line-height: 1.2;
+  font-size: 90px;
+  font-weight: normal;
+  font-family: "Great Vibes", cursive;
+  color: var(--pink);
+}
+
+.album .main .content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 1.5fr;
+  grid-gap: 35px;
+}
+.album .main .item {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.album .main .item1 {
+  grid-column: 1 / span 2;
+}
+.album .main .item5 {
+  grid-column: 1 / span 2;
+}
+.album .main .item6 {
+  grid-column: 3/4;
+  grid-row: 2/4;
+}
+.album .main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.album .main .info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+}
+.album .info .icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: linear-gradient(to right, #f55f8d 0, #f8ae56 51%, #f55f8d 100%);
+  background-size: 200%;
+  border-radius: 10px;
+  transform: translate(20px, -20px);
+  z-index: 20;
+}
+.album .info .icon a {
+  cursor: pointer;
+}
+.album .info .text {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  text-align: left;
+  transform: translateY(150px);
+  transition: all 0.75s;
+}
+/* wedding-card */
+.wedding-card {
+  background-image: url(../img/bgrleaf.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 70px 0;
+}
+.wedding-card .wrap {
+  margin: 100px 0;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  text-align: center;
+  color: var(--lightgreen);
+  background-color: var(--white);
+}
+
+.wedding-card .wrap .card-img {
+  padding-left: 40px;
+  padding-right: 20px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.wedding-card .wrap:before {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  right: 20px;
+  bottom: 40px;
+  content: "";
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  -webkit-transform: rotate(-0.5deg);
+  -ms-transform: rotate(-0.5deg);
+  transform: rotate(-0.5deg);
+}
+
+.wedding-card .wrap:after {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  right: 20px;
+  bottom: 40px;
+  content: "";
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  -webkit-transform: rotate(0.5deg);
+  -ms-transform: rotate(0.5deg);
+  transform: rotate(0.5deg);
+}
+
+.wedding-card .text {
+  z-index: 3;
+}
+
+.wedding-card .subheading {
+  display: block;
+  font-size: 20px;
+  color: var(--lightgreen);
+}
+
+.wedding-card h2 {
+  font-size: 65px;
+  color: var(--pink);
+  font-family: "Great Vibes", cursive;
+}
+
+.wedding-card .img {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.wedding-card .ftco-animate {
+  padding-right: 40px;
+  margin: 40px 0;
+}
+.wedding-card .ftco-animate img {
+  width: 200px;
+  margin: auto;
+  opacity: 0.2;
+}
+
+.wedding-card .time {
+  font-family: "Libre Caslon Text", serif;
+  font-size: 48px;
+  text-transform: uppercase;
+}
