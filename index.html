@@ -68,7 +68,7 @@
                   <a class="nav-link" href="#album">Album hình cưới</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="">Video</a>
+                  <a class="nav-link" href="#video">Video</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="">Lời chúc</a>
@@ -80,7 +80,7 @@
       </div>
     </header>
 
-    <!-- carousel -->
+    <!-- slider -->
     <section class="slider">
       <div
         id="carouselExampleAutoplaying"
@@ -112,13 +112,12 @@
           <i class="fa-solid fa-heart"></i>
           <h4>Anna Phạm Tú Quyên</h4>
           <h3>10 Tháng 6 năm 2023</h3>
+          <a class="angle-down" href="#info">
+            <i class="fa-solid fa-angle-down"></i>
+          </a>
         </div>
       </div>
-      <div class="down-btn">
-        <a href="#info">
-          <i class="fa-solid fa-angle-down"></i>
-        </a>
-      </div>
+      
     </section>
     <!-- info -->
     <section class="info" id="info">
@@ -312,7 +311,7 @@
       </div>
     </section>
 
-    <section class="video">
+    <section class="video" id="video">
       <div class="container">
         <header class="title col-md-12 text-center heading-section ftco-animate">
           <span class="clone mb-3">Our Video</span> 
@@ -323,17 +322,40 @@
             src="./assets/video/clip.mp4"
             controls
             poster="./assets/img/IMG_0865.jpg"
-            width="100%"
+            width="100%"          
             style="opacity: 0.9;"
           ></video>
         </main>
       </div>
     </section>
-    <section class="event">
-      <div class="container"></div>
-    </section>
+
     <section class="diary">
-      <div class="container"></div>
+      <div class="container">
+        <div class="diary-content">
+          <header class="title">
+            <h3>Sổ Lưu Bút</h3>
+          </header>
+          <main class="main">
+            <div class="form">
+              <form>
+                <div class="mb-3">
+                  <!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+                  <input type="text" class="form-control" id="nameText" aria-describedby="emailHelp" placeholder="Tên của bạn">
+                  <div id="emailHelp" class="form-text"></div>
+                </div>
+                <div class="mb-3">
+                  <!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+                  <input type="text" class="form-control" id="contentText" placeholder="Nhập lời chúc của bạn">
+                </div>
+                <button type="submit" class="btn btn-primary">Gửi lời chúc</button>
+              </form>
+            </div>
+            <div class="resulf">
+  
+            </div>
+          </main>
+        </div>        
+      </div>
     </section>
     <footer class="foooter">
       <div class="container"></div>

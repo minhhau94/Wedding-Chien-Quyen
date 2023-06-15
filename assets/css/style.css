@@ -47,7 +47,7 @@ a {
   margin: 0;
   font-family: "Great Vibes", cursive;
 }
-.header .navbar-brand:hover{
+.header .navbar-brand:hover {
   color: var(--lightgreen);
 }
 .header .navbar-nav .nav-link {
@@ -79,25 +79,16 @@ a {
 .header .nav-item {
   padding: 0 12px;
 }
-/* alider */
+/* slider */
 .slider {
   position: relative;
 }
-.slider img {
+.slider .carousel-inner img {
   height: 900px;
   width: 100%;
   object-fit: cover;
 }
-/* .slider::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-} */
+
 .slider .content {
   position: absolute;
   top: 0;
@@ -110,14 +101,12 @@ a {
   color: var(--white);
 }
 .slider .content_info {
-  /* background-image: linear-gradient(
-    to right,
-    hsla(198, 72%, 52%, 0.8),
-    hsla(146, 100%, 66%, 0.8)
-  ); */
   background-color: hsla(0, 0%, 0%, 0.4);
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   padding-top: 100px;
   text-align: center;
   font-weight: 700;
@@ -148,16 +137,14 @@ a {
   width: 100px;
   height: 100px;
 }
-.down-btn {
+/* .slider .down-btn {
   margin: auto;
   text-align: center;
-}
-.down-btn i {
-  position: absolute;
-  top: 670px;
-  left: 790px;
+} */
+.slider .content_info .angle-down i {
+  margin-top: 50px;
   font-size: 50px;
-  color: var(--white);
+  color: var(--lightgreen);
   animation: slideDown 1s linear infinite;
   /* animation-name: slideDown; */
   /* thời gian chuyển động */
@@ -250,7 +237,8 @@ a {
   opacity: 1;
 }
 
-.info .info-left .groom:before, .info .info-right .bride:before {
+.info .info-left .groom:before,
+.info .info-right .bride:before {
   position: absolute;
   top: 40px;
   left: 20px;
@@ -262,7 +250,8 @@ a {
   transform: rotate(-1deg);
 }
 
-.info .info-left .groom:after, .info .info-right .bride:after {
+.info .info-left .groom:after,
+.info .info-right .bride:after {
   position: absolute;
   top: 40px;
   left: 20px;
@@ -419,7 +408,7 @@ a {
   padding: 50px 0 100px 0;
 }
 
-.album .title{
+.album .title {
   margin-bottom: 50px;
 }
 .album .heading-section {
@@ -434,7 +423,7 @@ a {
   color: rgba(0, 0, 0, 0.05);
   line-height: 1;
   font-weight: 700;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 .album .heading-section h2 {
   line-height: 1.2;
@@ -508,15 +497,17 @@ a {
   transition: all 0.75s;
 }
 /* video */
-.video{
-background-image: url(../img/bg1.jpg);
-background-size: 100%;
-background-repeat: no-repeat;
-background-position: center;
-object-fit: cover;
-padding: 50px 100px 100px;
+.video {
+  background-image: url(../img/bg1.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  object-fit: cover;
+  padding: 50px 0 100px;
+  position: relative;
 }
-.video .title{
+
+.video .title {
   padding: 30px 0 20px 0;
 }
 .video .heading-section {
@@ -528,10 +519,11 @@ padding: 50px 100px 100px;
   left: 0;
   right: 0;
   font-size: 100px;
-  color: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.07);
   line-height: 1;
   font-weight: 700;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 10;
 }
 .video .heading-section h2 {
   line-height: 1.2;
@@ -539,4 +531,9 @@ padding: 50px 100px 100px;
   font-weight: normal;
   font-family: "Great Vibes", cursive;
   color: var(--pink);
+}
+
+/* diary */
+.diary .container{
+  width: 40%;
 }
